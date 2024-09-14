@@ -1,7 +1,7 @@
-export default function page() {
-  return (
-    <div>
-      <h1> This is Register page </h1>
-    </div>
-  );
+'use client'
+
+const RegisterPage = () => {
+  return <div>RegisterPage</div>
 }
+
+export default RegisterPage
