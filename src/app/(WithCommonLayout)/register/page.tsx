@@ -7,8 +7,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import FormController from '@/src/components/form/FormController'
 import FormInput from '@/src/components/form/FormInput'
-import useUserRegistration from '@/src/hooks/auth.hook'
 import registerValidationSchema from '@/src/schemas/register.schema'
+import { useUserRegistration } from '@/src/hooks/auth.hook'
 
 const RegisterPage = () => {
   const { mutate: handleUserRegistration, isPending } = useUserRegistration()
