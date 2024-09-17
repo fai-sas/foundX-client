@@ -13,6 +13,7 @@ import FormInput from '@/src/components/form/FormInput'
 import loginValidationSchema from '@/src/schemas/login.schema'
 import { useUser } from '@/src/context/user.provider'
 import { useUserLogin } from '@/src/hooks/auth.hook'
+import Loading from '@/src/components/UI/Loading'
 
 const LoginPage = () => {
   const searchParams = useSearchParams()
@@ -40,7 +41,7 @@ const LoginPage = () => {
 
   return (
     <>
-      {isPending && <h1>Loading...</h1>}
+      {isPending && <Loading />}
       <div className='flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center'>
         <h3 className='my-2 text-2xl font-bold'>Login with FoundX</h3>
         <p className='mb-4'>Welcome Back! Let&lsquo;s Get Started</p>
