@@ -2,6 +2,7 @@
 
 import { useUser } from '@/src/context/user.provider'
 import { logout } from '@/src/services/AuthService'
+import { protectedRoutes } from '@/src/utils/constants'
 import { Avatar } from '@nextui-org/avatar'
 import {
   Dropdown,
@@ -10,15 +11,20 @@ import {
   DropdownTrigger,
 } from '@nextui-org/dropdown'
 
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 export default function NavbarDropdown() {
   const router = useRouter()
+  const pathname = usePathname()
   const { user, setIsLoading: userLoading } = useUser()
 
   const handleLogout = () => {
     logout()
     userLoading(true)
+
+    if (protectedRoutes.some((route) => pathname.match(route))) {
+      router.push('/')
+    }
   }
 
   const handleNavigation = (pathname: string) => {

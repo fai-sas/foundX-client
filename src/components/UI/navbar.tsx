@@ -14,6 +14,7 @@ import { Link } from '@nextui-org/link'
 import { link as linkStyles } from '@nextui-org/theme'
 import NextLink from 'next/link'
 import clsx from 'clsx'
+import { useRouter } from 'next/navigation'
 
 import NavbarDropdown from './NavbarDropdown'
 
@@ -21,9 +22,11 @@ import { siteConfig } from '@/src/config/site'
 import { ThemeSwitch } from '@/src/components/UI/theme-switch'
 import { Logo } from '@/src/components/icons'
 import { useUser } from '@/src/context/user.provider'
+import { Button } from '@nextui-org/button'
 
 export const Navbar = () => {
-  const { user, isLoading } = useUser()
+  const router = useRouter()
+  const { user } = useUser()
 
   return (
     <NextUINavbar maxWidth='xl' position='sticky'>
@@ -62,7 +65,7 @@ export const Navbar = () => {
           </NavbarItem>
         ) : (
           <NavbarItem className='hidden gap-2 sm:flex'>
-            <Link href='/login'>Login</Link>
+            <Button onClick={() => router.push('/login')}>Login</Button>
           </NavbarItem>
         )}
 
