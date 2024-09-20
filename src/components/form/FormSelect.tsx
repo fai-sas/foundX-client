@@ -10,7 +10,7 @@ interface IProps extends IInput {
   }[]
 }
 
-export default function FXSelect({
+export default function FormSelect({
   options,
   name,
   label,

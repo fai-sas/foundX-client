@@ -9,12 +9,12 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from '@nextui-org/navbar'
-
 import { Link } from '@nextui-org/link'
 import { link as linkStyles } from '@nextui-org/theme'
 import NextLink from 'next/link'
 import clsx from 'clsx'
 import { useRouter } from 'next/navigation'
+import { Button } from '@nextui-org/button'
 
 import NavbarDropdown from './NavbarDropdown'
 
@@ -22,7 +22,6 @@ import { siteConfig } from '@/src/config/site'
 import { ThemeSwitch } from '@/src/components/UI/theme-switch'
 import { Logo } from '@/src/components/icons'
 import { useUser } from '@/src/context/user.provider'
-import { Button } from '@nextui-org/button'
 
 export const Navbar = () => {
   const router = useRouter()

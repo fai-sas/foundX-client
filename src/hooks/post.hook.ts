@@ -1,5 +1,6 @@
 import { useMutation } from '@tanstack/react-query'
 import toast from 'react-hot-toast'
+
 import { createPost } from '../services/Post'
 
 export const useCreatePost = () => {

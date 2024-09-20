@@ -5,7 +5,7 @@ import { IInput } from '@/src/types'
 
 interface IProps extends IInput {}
 
-export default function FXDatePicker({
+export default function FormDatePicker({
   label,
   name,
   variant = 'bordered',

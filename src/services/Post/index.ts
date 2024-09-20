@@ -1,7 +1,8 @@
 'use server'
 
-import axiosInstance from '@/src/lib/AxiosInstance'
 import { revalidateTag } from 'next/cache'
+
+import axiosInstance from '@/src/lib/AxiosInstance'
 
 export const createPost = async (formData: FormData): Promise<any> => {
   try {
