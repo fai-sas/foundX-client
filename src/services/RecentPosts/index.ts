@@ -1,4 +1,4 @@
-import envConfig from '@/src/config/envConfig'
+// import envConfig from '@/src/config/envConfig'
 
 export const getRecentPosts = async () => {
   const fetchOption = {
@@ -8,7 +8,7 @@ export const getRecentPosts = async () => {
   }
 
   const res = await fetch(
-    `${envConfig.baseApi}/items?sortBy=-createdAt&limit=9`,
+    `${process.env.NEXT_PUBLIC_BASE_API}/items?sortBy=-createdAt&limit=9`,
     fetchOption
   )
 
