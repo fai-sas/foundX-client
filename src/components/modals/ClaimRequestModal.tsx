@@ -1,10 +1,10 @@
 import { Button } from '@nextui-org/button'
 import { FieldValues, SubmitHandler } from 'react-hook-form'
-import FormInput from '../form/FormInput'
-import FormController from '../form/FormController'
-import ModalController from './ModalController'
-import FormTextarea from '../form/FormTextArea'
 import { useAddClaimRequest } from '@/src/hooks/claimRequest.hook'
+import ModalController from './ModalController'
+import FormController from '../form/FormController'
+import FormInput from '../form/FormInput'
+import FormTextarea from '../form/FormTextArea'
 
 interface IProps {
   id: string
@@ -44,6 +44,7 @@ export default function ClaimRequestModal({ id, questions }: IProps) {
         ))}
 
         <FormTextarea label='Description' name='description' />
+
         <div>
           <Button className='flex-1 w-full my-2' size='lg' type='submit'>
             {isPending ? 'Sending....' : 'Send'}
