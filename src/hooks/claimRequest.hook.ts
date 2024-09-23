@@ -1,7 +1,8 @@
 import { useMutation } from '@tanstack/react-query'
 import { FieldValues } from 'react-hook-form'
-import { addClaimRequest } from '../services/ClaimRequest'
 import toast from 'react-hot-toast'
+
+import { addClaimRequest } from '../services/ClaimRequest'
 
 export const useAddClaimRequest = () => {
   return useMutation<any, Error, FieldValues>({

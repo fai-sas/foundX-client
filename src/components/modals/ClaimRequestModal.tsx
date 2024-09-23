@@ -1,10 +1,13 @@
 import { Button } from '@nextui-org/button'
 import { FieldValues, SubmitHandler } from 'react-hook-form'
-import { useAddClaimRequest } from '@/src/hooks/claimRequest.hook'
-import ModalController from './ModalController'
+
 import FormController from '../form/FormController'
 import FormInput from '../form/FormInput'
 import FormTextarea from '../form/FormTextArea'
+
+import ModalController from './ModalController'
+
+import { useAddClaimRequest } from '@/src/hooks/claimRequest.hook'
 
 interface IProps {
   id: string
@@ -34,7 +37,7 @@ export default function ClaimRequestModal({ id, questions }: IProps) {
     >
       <FormController onSubmit={onSubmit}>
         {questions.map((question, index) => (
-          <div className='mb-4' key={index}>
+          <div key={index} className='mb-4'>
             <p className='mb-1'>{question}</p>
             <FormInput
               label={`Answer - ${index + 1}`}
