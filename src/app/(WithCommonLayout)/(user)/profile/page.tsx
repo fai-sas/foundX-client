@@ -1,7 +1,19 @@
-export default function page() {
+import Post from '@/src/components/UI/Post'
+import { getMyPosts } from '@/src/services/Post'
+import { IPost } from '@/src/types'
+
+export default async function page() {
+  const { data } = await getMyPosts()
+
   return (
-    <div>
-      <h1> Profile </h1>
-    </div>
+    <>
+      {data?.length ? (
+        data?.map((post: IPost) => <Post key={post._id} post={post} />)
+      ) : (
+        <div className='flex items-center justify-center w-full min-h-screen rounded-md bg-default-100'>
+          <h1 className='text-4xl'>No Post Found!</h1>
+        </div>
+      )}
+    </>
   )
 }
